@@ -1,5 +1,9 @@
 <template lang="html">
+<<<<<<< HEAD
   <h1>Galgje</h1>
+=======
+  <h1>test</h1>
+>>>>>>> 9dafecff138cf63570b1a61aa70c4e6ff96fc0cc
 </template>
 
 <script>
