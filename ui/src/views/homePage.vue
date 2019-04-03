@@ -1,7 +1,7 @@
 <template lang="html">
   <v-layout>
-    <h1>Galgje</h1>
-    <v-btn @click="randomWoord">Start</v-btn>
+    <h1>{{ gameName }}</h1>
+    <v-btn @click="randomWord">Start</v-btn>
   </v-layout>
 </template>
 
@@ -9,8 +9,9 @@
 export default {
   data () {
     return {
-      galgWoord: '',
-      woorden: [  'Kippenhok', 'Computer', 'Computer muis', 'Schommelbank', 'Grassprietje',
+      gameName: 'Galgje',
+      hangingmanWord: '',
+      words: [  'Kippenhok', 'Computer', 'Computer muis', 'Schommelbank', 'Grassprietje',
                   'Alpaca', 'Vliegvakantie', 'Vakantie', 'Website', 'Hondenbakje',
                   'Kreeft', 'Horoscoop', 'Televisie', 'Playstation', 'Gamer',
                   'Winkelwagen', 'Hamburger', 'Tuinbroek', 'Appelsap', 'Birmingham',
@@ -19,10 +20,10 @@ export default {
     }
   },
   methods: {
-    randomWoord: function() {
-      let randomGetal = Math.floor((Math.random() * 29) + 0)
-      this.galgWoord = this.woorden[randomGetal]
-      console.log(this.galgWoord)
+    randomWord: function() {
+      let randomNumber = Math.floor((Math.random() * 29) + 0)
+      this.hangingmanWord = this.words[randomNumber]
+      console.log(this.hangingmanWord)
     }
   }
 }
