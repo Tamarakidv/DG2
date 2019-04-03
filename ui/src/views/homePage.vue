@@ -1,21 +1,28 @@
 <template lang="html">
-<<<<<<< HEAD
-  <h1>Galgje</h1>
-=======
-  <h1>test</h1>
->>>>>>> 9dafecff138cf63570b1a61aa70c4e6ff96fc0cc
+  <v-layout>
+    <h1>Galgje</h1>
+    <v-btn @click="randomWoord">Start</v-btn>
+  </v-layout>
 </template>
 
 <script>
 export default {
   data () {
     return {
+      galgWoord: '',
       woorden: [  'Kippenhok', 'Computer', 'Computer muis', 'Schommelbank', 'Grassprietje',
                   'Alpaca', 'Vliegvakantie', 'Vakantie', 'Website', 'Hondenbakje',
                   'Kreeft', 'Horoscoop', 'Televisie', 'Playstation', 'Gamer',
                   'Winkelwagen', 'Hamburger', 'Tuinbroek', 'Appelsap', 'Birmingham',
                   'Scooter', 'Stopcontactdoos', 'Autobandventieldopje', 'Deurklink', 'Brandweerauto',
-                  'Pakeerplaats', 'Huurcontract', 'Koopwoning', 'Programmeertalen', 'Klokwijzer'  ]
+                  'Pakeerplaats', 'Huurcontract', 'Koopwoning', 'Programmeertalen', 'Klokwijzer' ]
+    }
+  },
+  methods: {
+    randomWoord: function() {
+      let randomGetal = Math.floor((Math.random() * 29) + 0)
+      this.galgWoord = this.woorden[randomGetal]
+      console.log(this.galgWoord)
     }
   }
 }
