@@ -15,7 +15,7 @@
 export default {
   data () {
     return {
-      randomWord: 'dit woord',
+      randomWord: '',
       letters: [],
       cardWidth: null
     }
