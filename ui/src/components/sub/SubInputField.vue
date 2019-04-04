@@ -1,14 +1,14 @@
 <template lang="html">
   <v-flex xs1>
     <v-text-field
-      name="name"
+      v-model="letter"
       label="kies een letter"
       :rules="inputRule"
     ></v-text-field>
     <v-btn
       color="primary"
       :disabled="!valid"
-      @click="validate"
+      @click="enter"
     >
       Enter
     </v-btn>
@@ -19,20 +19,27 @@
 export default {
   data () {
     return {
+      letter: '',
+      valid: false,
       inputRule: [
-        v => (v && v.length <= 1) || 'je mag maar 1 letter per keer infullen'
+        v => (v && v.length <= 1)
       ]
     }
   },
-  methods: {
-    validate () {
-      if (this.$refs.form.validate()) {
-        this.snackbar = true
+  watch: {
+    letter (thisLetter) {
+      console.log(thisLetter);
+      if (!thisLetter || thisLetter.length <= 0 || thisLetter.length > 1) {
+        this.valid = false
+      } else {
+        this.valid = true
       }
     }
-  }
-  created () {
-    console.log();
+  },
+  methods: {
+    enter () {
+      // function om te checken of de letter in het woord klopt
+    }
   }
 }
 </script>
