@@ -52,7 +52,7 @@ export default {
     enter () {
       let counter = 0
       for (var i = 0; i < this.$store.state.letter.length; i++) {
-        if (this.$store.state.letter[i].letter == this.givenLetter) {
+        if (this.$store.state.letter[i].letter == this.givenLetter || this.$store.state.letter[i].letter == this.givenLetter.toUpperCase()) {
           this.$store.state.letter[i].fisible = true
         } else {
           if (counter == (this.$store.state.letter.length - 1)) {
