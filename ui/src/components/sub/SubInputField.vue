@@ -34,9 +34,7 @@ export default {
     givenLetter (thisLetter) {
       let counter = 0
       for (let i = 0; i < this.$store.state.storeGivenLetter.length; i++) {
-        console.log(this.$store.state.storeGivenLetter[i].letter, '||', thisLetter);
-        if (!this.$store.state.storeGivenLetter[i].letter == thisLetter) {
-          console.log('i');
+        if (this.$store.state.storeGivenLetter[i].letter != thisLetter) {
           if (counter == (this.$store.state.storeGivenLetter.length - 1)) {
             if (!thisLetter || thisLetter.length <= 0 || thisLetter.length > 1) {
               this.valid = false
@@ -51,9 +49,6 @@ export default {
     }
   },
   methods: {
-    // storeLetter () {
-    //   console.log(this.$store.state.storeGivenLetter);
-    // },
     enter () {
       let counter = 0
       for (var i = 0; i < this.$store.state.letter.length; i++) {
@@ -69,8 +64,7 @@ export default {
         }
       }
       if (this.givenLetter) {
-        this.$store.state.storeGivenLetter.push(this.givenLetter)
-        console.log('data: ', this.$store.state.storeGivenLetter);
+        this.$store.state.storeGivenLetter.push({'letter': this.givenLetter})
       }
       this.$refs.inputField.reset()
     }

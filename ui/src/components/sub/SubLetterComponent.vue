@@ -33,7 +33,6 @@ export default {
       }
       this.$store.state.letter = this.letters
       this.$store.state.storeGivenLetter = [{'letter': null}]
-      console.log('strike', this.$store.state.storeGivenLetter);
     }
   }
 }
