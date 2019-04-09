@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     letter: [],
     failLetter: [],
-    storeGivenLetter: []
+    storeGivenLetter: [],
+    update: 0
   },
   mutations: {
 

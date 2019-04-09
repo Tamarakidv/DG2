@@ -1,6 +1,6 @@
 <template lang="html">
   <v-layout justify-center>
-      <v-card v-for="letter in letters" class="letterBlock headerText">
+      <v-card v-for="letter in this.letters" class="letterBlock headerText">
         <v-layout align-end justify-center row fill-height>
           <v-card-text v-if="letter.visible === true">
             {{letter.letter}}
@@ -31,14 +31,27 @@ export default {
   },
   watch: {
     gottenWord (data) {
-      console.log(data);
+      console.log(data)
       this.letters = []
       for (let i = 0; i < data.length; i++) {
-        this.letters.push({'letter': data.charAt(i), 'visible': false})
+        if (data.charAt(i) == ' ') {
+          this.letters.push({'letter': data.charAt(i), 'visible': true})
+        } else {
+          this.letters.push({'letter': data.charAt(i), 'visible': false})
+        }
       }
       this.$store.state.letter = this.letters
       this.$store.state.storeGivenLetter = [{'letter': null}]
+    },
+    updateLetters (data) {
+      this.letters = this.$store.state.letter
     }
+  },
+  computed: {
+    updateLetters () {
+      return this.$store.state.update
+    },
+
   }
 }
 </script>

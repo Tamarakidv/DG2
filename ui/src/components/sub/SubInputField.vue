@@ -1,19 +1,23 @@
 <template lang="html">
-  <v-flex xs1>
-    <v-text-field
-      ref="inputField"
-      v-model="givenLetter"
-      label="Voer een letter in"
-      :rules="inputRule"
-    ></v-text-field>
-    <v-btn
-      color="primary"
-      :disabled="!valid"
-      @click="enter"
-    >
-      Enter
-    </v-btn>
-  </v-flex>
+  <v-layout row wrap>
+    <v-flex xs5>
+      <v-text-field
+        ref="inputField"
+        v-model="givenLetter"
+        label="Voer een letter in"
+        :rules="inputRule"
+      ></v-text-field>
+    </v-flex>
+    <v-flex xs1>
+      <v-btn
+        color="primary"
+        :disabled="!valid"
+        @click="enter"
+      >
+        Enter
+      </v-btn>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -53,7 +57,7 @@ export default {
       let counter = 0
       for (var i = 0; i < this.$store.state.letter.length; i++) {
         if (this.$store.state.letter[i].letter == this.givenLetter || this.$store.state.letter[i].letter == this.givenLetter.toUpperCase()) {
-          this.$store.state.letter[i].fisible = true
+          this.$store.state.letter[i].visible = true
         } else {
           if (counter == (this.$store.state.letter.length - 1)) {
             let fail = this.$store.state.failLetter.length + 1
@@ -66,6 +70,8 @@ export default {
       if (this.givenLetter) {
         this.$store.state.storeGivenLetter.push({'letter': this.givenLetter})
       }
+      let count = this.$store.state.update += 1
+      this.$store.state.update = count
       this.$refs.inputField.reset()
       this.valid = false
     }
