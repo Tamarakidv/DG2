@@ -67,6 +67,7 @@ export default {
         this.$store.state.storeGivenLetter.push({'letter': this.givenLetter})
       }
       this.$refs.inputField.reset()
+      this.valid = false
     }
   }
 }

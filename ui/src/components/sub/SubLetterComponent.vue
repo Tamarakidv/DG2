@@ -20,13 +20,18 @@ export default {
   },
   data () {
     return {
+      gottenWord: '',
       randomWord: '',
       letters: [],
       cardWidth: null
     }
   },
+  created () {
+    this.gottenWord = this.hangingmanWord
+  },
   watch: {
-    hangingmanWord (data) {
+    gottenWord (data) {
+      console.log(data);
       this.letters = []
       for (let i = 0; i < data.length; i++) {
         this.letters.push({'letter': data.charAt(i), 'visible': false})
