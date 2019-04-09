@@ -39,25 +39,11 @@ export default {
         'Galg4.png',
         'Galg5.png'
       ],
-      showImg: 0
     }
   },
   props: {
     hangingmanWord: String,
     image: String
-  },
-  methods: {
-
-  },
-  watch: {
-    updateImg (data) {
-      this.showImg++
-    }
-  },
-  computed: {
-    updateImg () {
-      return this.$store.state.failLetter
-    }
   }
 }
 </script>
