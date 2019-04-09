@@ -1,17 +1,18 @@
 <template>
   <v-layout column>
-    <v-layout justify-center>
-      <!-- <img v-bind:src="image">
-      <h1>{{ img }}</h1> -->
-    </v-layout>
+    <v-container justify-center >
+      <img class="gameboard" :src="require('@/assets/'+ images[0])" />
+    </v-container>
+    <v-container>
+      <lettercomponent
+        :hangingmanWord="hangingmanWord"
+      ></lettercomponent>
+    </v-container>
     <v-layout xs1>
       <inputfield
-        :hangingmanWord="test"
+        :hangingmanWord="hangingmanWord"
       ></inputfield>
     </v-layout>
-    <lettercomponent
-      :hangingmanWord="test"
-    ></lettercomponent>
     <v-layout justify-center>
       <h1>{{ hangingmanWord }}</h1>
     </v-layout>
@@ -30,12 +31,31 @@ export default {
   },
   data () {
     return {
-      test: 'woorrrrrrd'
+      images: [
+        'start.png',
+        'Galg1.png',
+        'Galg2.png',
+        'Galg3.png',
+        'Galg4.png',
+        'Galg5.png'
+      ],
+      showImg: ''
     }
   },
   props: {
     hangingmanWord: String,
     image: String
+  },
+  methods: {
+
   }
 }
 </script>
+
+<style lang="css" scoped>
+.gameboard {
+  border: double 5px;
+  border-color: grey;
+  border-radius: 5px;
+}
+</style>
