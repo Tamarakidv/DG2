@@ -51,7 +51,6 @@ export default {
   },
   watch: {
     updateImg (data) {
-      console.log(data);
       this.showImg++
     }
   },
