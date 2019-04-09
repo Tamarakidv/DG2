@@ -3,7 +3,7 @@
     <v-text-field
       ref="inputField"
       v-model="givenLetter"
-      label="kies een letter"
+      label="Voer een letter in"
       :rules="inputRule"
     ></v-text-field>
     <v-btn
@@ -26,7 +26,7 @@ export default {
       givenLetter: '',
       valid: false,
       inputRule: [
-        v => (v && v.length <= 1) || 'je mag maar 1 letter infoeren'
+        v => (v && v.length <= 1) || 'Voer één letter in'
       ]
     }
   },
