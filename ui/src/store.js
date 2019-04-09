@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     letter: [],
-    failLetter: [],
+    failLetter: 0,
     storeGivenLetter: [],
     update: 0
   },
