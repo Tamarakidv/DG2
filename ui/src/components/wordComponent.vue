@@ -1,18 +1,18 @@
 <template>
   <v-layout column>
     <v-container justify-center >
-      <img class="gameboard" :src="require('@/assets/'+ images[0])" />
+      <img class="gameboard" :src="require('@/assets/'+ images[5])" />
     </v-container>
     <v-container>
-      <lettercomponent
-        :hangingmanWord="hangingmanWord"
-      ></lettercomponent>
+      <v-layout row>
+        <lettercomponent
+          :hangingmanWord="hangingmanWord"
+        ></lettercomponent>
+        <inputfield
+          :hangingmanWord="hangingmanWord"
+        ></inputfield>
+      </v-layout>
     </v-container>
-    <v-layout xs1>
-      <inputfield
-        :hangingmanWord="hangingmanWord"
-      ></inputfield>
-    </v-layout>
     <v-layout justify-center>
       <h1>{{ hangingmanWord }}</h1>
     </v-layout>
