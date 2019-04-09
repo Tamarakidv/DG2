@@ -1,15 +1,23 @@
 <template lang="html">
-  <v-layout column>
+  <v-layout id="test" column>
     <v-layout justify-center>
-      <h1 class="headerText">{{ gameName }}</h1>
+      <h1 class="headerText gameName">{{ gameName }}</h1>
     </v-layout>
-    <v-layout justify-center>
+    <v-layout v-if="showGame" justify-center>
       <wordComponent
         :hangingmanWord= "hangingmanWord"
+        :image= "image"
       ></wordcomponent>
     </v-layout>
-    <v-layout justify-center>
-      <v-btn @click="randomWord">Start</v-btn>
+    <v-layout justify-center class="startBtn">
+      <v-btn
+        v-if="!showGame"
+        round
+        dark
+        large
+        color="primary"
+        @click="randomWord"
+      >Start</v-btn>
     </v-layout>
   </v-layout>
 </template>
@@ -23,7 +31,9 @@ export default {
   },
   data () {
     return {
+      showGame: false,
       gameName: 'Galgje',
+      image: '../assets/start.png',
       hangingmanWord: '',
       words: [  'Kippenhok', 'Computer', 'Computer muis', 'Schommelbank', 'Grassprietje',
                   'Alpaca', 'Vliegvakantie', 'Vakantie', 'Website', 'Hondenbakje',
@@ -37,11 +47,15 @@ export default {
     randomWord: function() {
       let randomNumber = Math.floor((Math.random() * 29) + 0)
       this.hangingmanWord = this.words[randomNumber]
-      console.log(this.hangingmanWord)
+      this.showGame = true
     }
   }
 }
 </script>
 
 <style lang="css" scoped>
+#test {
+  background-image: url("../assets/background.png");
+
+}
 </style>
