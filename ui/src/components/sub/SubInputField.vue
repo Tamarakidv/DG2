@@ -60,8 +60,7 @@ export default {
           this.$store.state.letter[i].visible = true
         } else {
           if (counter == (this.$store.state.letter.length - 1)) {
-            let fail = this.$store.state.failLetter.length + 1
-            this.$store.state.failLetter.push(fail + ' fail(s)')
+            this.$store.state.failLetter++
           } else {
             counter++
           }
@@ -70,7 +69,7 @@ export default {
       if (this.givenLetter) {
         this.$store.state.storeGivenLetter.push({'letter': this.givenLetter})
       }
-      let count = this.$store.state.update += 1
+      let count = this.$store.state.update++
       this.$store.state.update = count
       this.$refs.inputField.reset()
       this.valid = false

@@ -1,7 +1,7 @@
 <template>
   <v-layout column>
     <v-container justify-center >
-      <img class="gameboard" :src="require('@/assets/'+ images[5])" />
+      <img class="gameboard" :src="require('@/assets/'+ images[showImg])" />
     </v-container>
     <v-container>
       <v-layout row>
@@ -39,7 +39,7 @@ export default {
         'Galg4.png',
         'Galg5.png'
       ],
-      showImg: ''
+      showImg: 0
     }
   },
   props: {
@@ -48,6 +48,17 @@ export default {
   },
   methods: {
 
+  },
+  watch: {
+    updateImg (data) {
+      console.log(data);
+      this.showImg++
+    }
+  },
+  computed: {
+    updateImg () {
+      return this.$store.state.failLetter
+    }
   }
 }
 </script>

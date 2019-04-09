@@ -50,8 +50,7 @@ export default {
   computed: {
     updateLetters () {
       return this.$store.state.update
-    },
-
+    }
   }
 }
 </script>
