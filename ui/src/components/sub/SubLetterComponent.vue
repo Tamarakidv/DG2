@@ -1,5 +1,5 @@
 <template lang="html">
-  <v-layout justify-center>
+  <v-layout justify-end>
       <v-card v-for="letter in this.letters" class="letterBlock headerText">
         <v-layout align-end justify-center row fill-height>
           <v-card-text v-if="letter.visible === true">
@@ -55,11 +55,6 @@ export default {
 }
 </script>
 <style lang="css" scoped>
-.letterBlock {
-  width: 50px;
-  height: 50px;
-  border: solid 1px;
-  border-color: grey;
-}
+
 
 </style>

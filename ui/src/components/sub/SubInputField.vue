@@ -1,11 +1,17 @@
 <template lang="html">
-  <v-layout row wrap>
+  <v-layout>
     <v-flex xs5>
+      <v-layout fill-height>
+        <h2>Voer hier uw letter in:</h2>
+      </v-layout>
+    </v-flex>
+    <v-flex xs1>
       <v-text-field
         ref="inputField"
         v-model="givenLetter"
-        label="Voer een letter in"
         :rules="inputRule"
+        single-line
+        mask="A"
       ></v-text-field>
     </v-flex>
     <v-flex xs1>
@@ -13,9 +19,7 @@
         color="primary"
         :disabled="!valid"
         @click="enter"
-      >
-        Enter
-      </v-btn>
+      >Enter</v-btn>
     </v-flex>
   </v-layout>
 </template>

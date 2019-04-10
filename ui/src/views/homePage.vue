@@ -65,13 +65,6 @@ export default {
   background-image: url("../assets/background.png");
 
 }
-.gameboard {
-  border: double 5px;
-  border-color: grey;
-  border-radius: 5px;
-}
-.logo {
-  height: 180px;
-  margin-bottom: 20px;
-}
+
+
 </style>

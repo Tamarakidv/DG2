@@ -1,18 +1,21 @@
 <template>
   <v-layout column>
-    <v-layout justify-center >
+    <v-layout justify-center>
       <img class="gameboard" :src="require('@/assets/'+ images[$store.state.failLetter])" />
     </v-layout>
-    <v-container>
-      <v-layout row>
+    <v-layout justify-center class="gameControls">
+      <v-flex xs8>
         <lettercomponent
           :hangingmanWord="hangingmanWord"
         ></lettercomponent>
+      </v-flex>
+      <v-flex xs6>
         <inputfield
+        class="gameInput"
           :hangingmanWord="hangingmanWord"
         ></inputfield>
-      </v-layout>
-    </v-container>
+      </v-flex>
+    </v-layout>
   </v-layout>
 </template>
 
@@ -46,9 +49,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.gameboard {
-  border: double 5px;
-  border-color: grey;
-  border-radius: 5px;
-}
+
 </style>

@@ -10,3 +10,24 @@
   border: solid 1px;
   border-color: grey;
 }
+.gameboard {
+  border: double 5px;
+  border-color:  grey;
+  border-radius: 5px;
+}
+.logo {
+  height: 180px;
+  margin-bottom: 20px;
+}
+.letterBlock {
+  border-color: grey !important;
+}
+.gameControls {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.gameInput {
+  margin-left: 40px;
+  margin-right: 50px;
+}
