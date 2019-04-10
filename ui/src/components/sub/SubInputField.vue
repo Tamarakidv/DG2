@@ -9,7 +9,6 @@
       <v-text-field
         ref="inputField"
         v-model="givenLetter"
-        :rules="inputRule"
         single-line
         mask="A"
       ></v-text-field>
@@ -33,9 +32,6 @@ export default {
     return {
       givenLetter: '',
       valid: false,
-      inputRule: [
-        v => (v && v.length <= 1) || 'Voer één letter in'
-      ]
     }
   },
   watch: {
