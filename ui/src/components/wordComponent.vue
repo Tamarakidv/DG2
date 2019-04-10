@@ -13,7 +13,6 @@
         ></inputfield>
       </v-layout>
     </v-container>
-    <dialogComp :hangingmanWord="hangingmanWord"/>
     <v-layout justify-center>
       <!-- <h1>{{ hangingmanWord }}</h1> -->
     </v-layout>
@@ -24,13 +23,11 @@
 <script>
 import inputfield from '../components/sub/SubInputField.vue'
 import lettercomponent from '../components/sub/SubLetterComponent.vue'
-import dialogComp from '../components/base/BaseDialogComponent.vue'
 
 export default {
   components: {
     inputfield,
-    lettercomponent,
-    dialogComp
+    lettercomponent
   },
   data () {
     return {
