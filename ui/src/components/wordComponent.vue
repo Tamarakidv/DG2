@@ -1,7 +1,14 @@
 <template>
   <v-layout column>
     <v-layout justify-center>
-      <img class="gameboard" :src="require('@/assets/'+ images[$store.state.failLetter])" />
+      <v-flex offset-xs2>
+        <img class="gameboard" :src="require('@/assets/'+ images[$store.state.failLetter])" />
+      </v-flex>
+      <v-flex>
+        <guessedLetterComponent
+          :guessedText="guessedText"
+          class="textSize"/>
+      </v-flex>
     </v-layout>
     <v-layout justify-center class="gameControls">
       <v-flex xs8>
@@ -23,11 +30,13 @@
 <script>
 import inputfield from '../components/sub/SubInputField.vue'
 import lettercomponent from '../components/sub/SubLetterComponent.vue'
+import guessedLetterComponent from '../components/sub/SubGuessedLetterComponent.vue'
 
 export default {
   components: {
     inputfield,
-    lettercomponent
+    lettercomponent,
+    guessedLetterComponent
   },
   data () {
     return {
@@ -43,7 +52,8 @@ export default {
   },
   props: {
     hangingmanWord: String,
-    image: String
+    image: String,
+    guessedText: String
   }
 }
 </script>

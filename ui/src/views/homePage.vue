@@ -1,5 +1,5 @@
 <template lang="html">
-  <v-layout id="test" column>
+  <v-layout id="background" column>
     <v-layout justify-center>
       <img :src="require('@/assets/'+ logo)" class="logo" />
     </v-layout>
@@ -7,6 +7,7 @@
       <wordComponent
         :hangingmanWord= "hangingmanWord"
         :image= "image"
+        :guessedText= "guessedText"
       ></wordcomponent>
     </v-layout>
     <v-layout justify-center>
@@ -41,6 +42,7 @@ export default {
       showGame: false,
       gameName: 'Galgje',
       image: '../assets/start.png',
+      guessedText: 'guessedLetters.png',
       hangingmanWord: '',
       words: [  'Kippenhok', 'Computer', 'Computer muis', 'Schommelbank', 'Grassprietje',
                   'Alpaca', 'Vliegvakantie', 'Vakantie', 'Website', 'Hondenbakje',
@@ -61,10 +63,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-#test {
-  background-image: url("../assets/background.png");
-
+#background {
+  background-image: url('../assets/background.png');
 }
-
-
 </style>
