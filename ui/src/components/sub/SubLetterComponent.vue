@@ -35,7 +35,7 @@ export default {
       this.letters = []
       for (let i = 0; i < data.length; i++) {
         if (data.charAt(i) == ' ') {
-          this.letters.push({'letter': data.charAt(i), 'visible': true})
+          this.letters.push({'letter': '-', 'visible': true})
         } else {
           this.letters.push({'letter': data.charAt(i).toUpperCase(), 'visible': false})
         }
