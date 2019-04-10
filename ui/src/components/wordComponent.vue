@@ -1,8 +1,8 @@
 <template>
   <v-layout column>
-    <v-container justify-center >
+    <v-layout justify-center >
       <img class="gameboard" :src="require('@/assets/'+ images[$store.state.failLetter])" />
-    </v-container>
+    </v-layout>
     <v-container>
       <v-layout row>
         <lettercomponent
@@ -13,9 +13,6 @@
         ></inputfield>
       </v-layout>
     </v-container>
-    <v-layout justify-center>
-      <!-- <h1>{{ hangingmanWord }}</h1> -->
-    </v-layout>
   </v-layout>
 </template>
 

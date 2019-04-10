@@ -1,7 +1,7 @@
 <template lang="html">
   <v-layout id="test" column>
     <v-layout justify-center>
-      <h1 class="headerText gameName">{{ gameName }}</h1>
+      <img :src="require('@/assets/'+ logo)" class="logo" />
     </v-layout>
     <v-layout v-if="showGame" justify-center>
       <wordComponent
@@ -9,16 +9,21 @@
         :image= "image"
       ></wordcomponent>
     </v-layout>
-    <v-layout justify-center class="startBtn">
-      <v-btn
-        v-if="!showGame"
-        round
-        dark
-        large
-        color="primary"
-        @click="randomWord"
-      >Start</v-btn>
+    <v-layout justify-center>
+      <img :src="require('@/assets/'+ startImage)" class="gameboard" v-if="!showGame">
     </v-layout>
+    <v-container>
+      <v-layout justify-center>
+        <v-btn
+          v-if="!showGame"
+          round
+          dark
+          large
+          color="primary"
+          @click="randomWord"
+        >Start</v-btn>
+      </v-layout>
+    </v-container>
   </v-layout>
 </template>
 
@@ -31,6 +36,8 @@ export default {
   },
   data () {
     return {
+      logo: 'galgLogo.png',
+      startImage: 'startPage.png',
       showGame: false,
       gameName: 'Galgje',
       image: '../assets/start.png',
@@ -40,7 +47,7 @@ export default {
                   'Kreeft', 'Horoscoop', 'Televisie', 'Playstation', 'Gamer',
                   'Winkelwagen', 'Hamburger', 'Tuinbroek', 'Appelsap', 'Birmingham',
                   'Scooter', 'Stopcontactdoos', 'Autobandventieldopje', 'Deurklink', 'Brandweerauto',
-                  'Pakeerplaats', 'Huurcontract', 'Koopwoning', 'Programmeertalen', 'Klokwijzer' ]
+                  'Parkeerplaats', 'Huurcontract', 'Koopwoning', 'Programmeertalen', 'Klokwijzer' ]
     }
   },
   methods: {
@@ -57,5 +64,14 @@ export default {
 #test {
   background-image: url("../assets/background.png");
 
+}
+.gameboard {
+  border: double 5px;
+  border-color: grey;
+  border-radius: 5px;
+}
+.logo {
+  height: 180px;
+  margin-bottom: 20px;
 }
 </style>
