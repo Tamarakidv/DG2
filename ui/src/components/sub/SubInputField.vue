@@ -11,6 +11,7 @@
         v-model="givenLetter"
         single-line
         mask="A"
+        @keyup.13="enter"
       ></v-text-field>
     </v-flex>
     <v-flex xs1>
