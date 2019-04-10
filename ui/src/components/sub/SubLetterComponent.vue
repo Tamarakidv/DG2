@@ -37,7 +37,7 @@ export default {
         if (data.charAt(i) == ' ') {
           this.letters.push({'letter': data.charAt(i), 'visible': true})
         } else {
-          this.letters.push({'letter': data.charAt(i), 'visible': false})
+          this.letters.push({'letter': data.charAt(i).toUpperCase(), 'visible': false})
         }
       }
       this.$store.state.letter = this.letters
