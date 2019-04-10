@@ -73,6 +73,16 @@ export default {
       this.$store.state.update = count
       this.$refs.inputField.reset()
       this.valid = false
+      let counting = 0
+      for (var i = 0; i < this.$store.state.letter.length; i++) {
+        if (this.$store.state.letter[i].visible === true) {
+          if (counting  == (this.$store.state.letter.length - 1)){
+            this.$store.state.win = true
+          } else {
+            counting++
+          }
+        }
+      }
     }
   }
 }
