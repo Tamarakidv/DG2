@@ -58,6 +58,16 @@ export default {
       this.hangingmanWord = this.words[randomNumber]
       this.showGame = true
     }
+  },
+  watch: {
+    checkEndGame (data) {
+      this.showGame = false
+    }
+  },
+  computed: {
+    checkEndGame () {
+      return this.$store.state.endGame
+    }
   }
 }
 </script>
