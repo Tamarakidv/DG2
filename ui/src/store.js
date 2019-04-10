@@ -8,7 +8,9 @@ export default new Vuex.Store({
     letter: [],
     failLetter: 0,
     storeGivenLetter: [],
-    update: 0
+    update: 0,
+    endGame: false,
+    win: false
   },
   mutations: {
 
