@@ -78,18 +78,11 @@ export default {
   methods: {
     restart () {
       this.$store.state.storeGivenLetter = [null]
-      console.log('1');
       this.$store.state.letter = [null]
-      console.log('2');
       this.$store.state.failLetter = 0
-      console.log('3');
       this.$store.state.update = 0
-      console.log('4');
       this.$store.state.endGame = false
-      console.log('5');
       this.$store.state.win = false
-      console.log('6');
-      this.$store.state.endGame = true
       this.dialog = false
       this.wonOrNot = ''
     }
