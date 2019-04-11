@@ -23,17 +23,28 @@
           color="primary"
           @click="randomWord"
         >Start</v-btn>
+        <v-btn
+          v-if="!showGame"
+          round
+          dark
+          large
+          color="primary"
+          @click="gameRules"
+        >regels</v-btn>
       </v-layout>
     </v-container>
+    <dialogComp/>
   </v-layout>
 </template>
 
 <script>
 import wordComponent from '../components/wordComponent.vue'
+import dialogComp from '../components/base/BaseDialogComponentRules.vue'
 
 export default {
   components: {
-    wordComponent
+    wordComponent,
+    dialogComp
   },
   data () {
     return {
@@ -57,6 +68,9 @@ export default {
       let randomNumber = Math.floor((Math.random() * 29) + 0)
       this.hangingmanWord = this.words[randomNumber]
       this.showGame = true
+    },
+    gameRules () {
+      this.$store.state.gameRule = true
     }
   },
   watch: {

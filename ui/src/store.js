@@ -10,6 +10,7 @@ export default new Vuex.Store({
     failLetter: 0,
     update: 0,
     endGame: false,
-    win: false
+    win: false,
+    gameRule: false
   }
 })

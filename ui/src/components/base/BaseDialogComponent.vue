@@ -81,8 +81,9 @@ export default {
       this.$store.state.letter = [null]
       this.$store.state.failLetter = 0
       this.$store.state.update = 0
-      this.$store.state.endGame = true
+      this.$store.state.endGame = false
       this.$store.state.win = false
+      this.$store.state.endGame = true
       this.dialog = false
       this.wonOrNot = ''
     }
