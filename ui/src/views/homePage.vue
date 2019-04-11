@@ -62,6 +62,7 @@ export default {
   watch: {
     checkEndGame (data) {
       this.showGame = false
+      this.$store.state.endGame = false
     }
   },
   computed: {
