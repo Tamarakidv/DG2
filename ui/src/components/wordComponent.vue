@@ -1,7 +1,7 @@
 <template>
   <v-layout column>
-    <v-layout justify-center>
-      <v-flex offset-xs2>
+    <v-layout>
+      <v-flex offset-xs3>
         <img class="gameboard" :src="require('@/assets/'+ images[$store.state.failLetter])" />
       </v-flex>
       <v-flex>
@@ -11,7 +11,7 @@
       </v-flex>
     </v-layout>
     <v-layout justify-center class="gameControls">
-      <v-flex xs8>
+      <v-flex offset-xs3>
         <lettercomponent
           :hangingmanWord="hangingmanWord"
         ></lettercomponent>

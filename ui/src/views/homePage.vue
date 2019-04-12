@@ -10,8 +10,10 @@
         :guessedText= "guessedText"
       ></wordcomponent>
     </v-layout>
-    <v-layout justify-center>
-      <img :src="require('@/assets/'+ startImage)" class="gameboard" v-if="!showGame">
+    <v-layout>
+      <v-flex offset-xs3>
+        <img :src="require('@/assets/'+ startImage)" class="gameboard" v-if="!showGame">
+      </v-flex>
     </v-layout>
     <v-container>
       <v-layout justify-center>
