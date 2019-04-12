@@ -11,7 +11,7 @@
         v-model="givenLetter"
         single-line
         mask="A"
-        @keyup.13="enter"
+        @keyup.13="enterKey"
       ></v-text-field>
     </v-flex>
     <v-flex xs1>
@@ -54,6 +54,11 @@ export default {
     }
   },
   methods: {
+    enterKey () {
+      if (this.givenLetter != '') {
+        this.enter()
+      }
+    },
     enter () {
       let counter = 0
       for (var i = 0; i < this.$store.state.letter.length; i++) {
