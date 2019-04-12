@@ -32,6 +32,11 @@ export default {
       dialog: false
     }
   },
+  methods: {
+    closeBtn () {
+      this.dialog = false
+    }
+  },
   watch: {
     checkGameRule (data) {
       this.dialog = true
