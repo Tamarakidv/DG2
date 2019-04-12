@@ -14,6 +14,14 @@
         <br/>
         2. regel 2
       </v-card-text>
+      <v-card-actions>
+        <v-layout row wrap justify-center>
+          <v-btn
+            color="primary"
+            @click="closeBtn"
+          >Sluiten</v-btn>
+        </v-layout>
+      </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
@@ -23,6 +31,11 @@ export default {
   data () {
     return {
       dialog: false
+    }
+  },
+  methods: {
+    closeBtn () {
+      this.dialog = false
     }
   },
   watch: {
