@@ -1,17 +1,17 @@
 <template>
   <v-layout column>
     <v-layout>
-      <v-flex offset-xs3>
+      <v-flex offset-xs2 xs8>
         <img class="gameboard" :src="require('@/assets/'+ images[$store.state.failLetter])" />
       </v-flex>
-      <v-flex>
+      <v-flex xs3>
         <guessedLetterComponent
           :guessedText="guessedText"
           class="textSize"/>
       </v-flex>
     </v-layout>
     <v-layout justify-center class="gameControls">
-      <v-flex offset-xs3>
+      <v-flex offset-xs2>
         <lettercomponent
           :hangingmanWord="hangingmanWord"
         ></lettercomponent>
