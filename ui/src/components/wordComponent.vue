@@ -10,7 +10,7 @@
           class="textSize"/>
       </v-flex>
     </v-layout>
-    <v-layout justify-center class="gameControls">
+    <v-layout v-if="guesWord" justify-center class="gameControls">
       <v-flex offset-xs2>
         <lettercomponent
           :hangingmanWord="hangingmanWord"
@@ -23,8 +23,12 @@
         ></inputfield>
       </v-flex>
     </v-layout>
+    <v-layout v-if="!guesWord" class="gameControls">
+      <v-flex offset-xs2>
+        <textField :hangingmanWord="hangingmanWord"/>
+      </v-flex>
+    </v-layout>
     <dialogComp :hangingmanWord="hangingmanWord"/>
-    <textField/>
   </v-layout>
 </template>
 
@@ -54,6 +58,7 @@ export default {
         'Galg4.png',
         'Galg5.png'
       ],
+      guesWord: false
     }
   },
   props: {
