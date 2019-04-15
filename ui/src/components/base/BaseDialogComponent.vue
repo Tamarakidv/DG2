@@ -84,6 +84,7 @@ export default {
       this.$store.state.endGame = false
       this.$store.state.win = false
       this.$store.state.endGame = true
+      this.$store.state.guesWord = false
       this.dialog = false
       this.wonOrNot = ''
     }

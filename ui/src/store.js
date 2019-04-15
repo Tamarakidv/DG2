@@ -11,6 +11,7 @@ export default new Vuex.Store({
     update: 0,
     endGame: false,
     win: false,
-    gameRule: false
+    gameRule: false,
+    guesWord: false
   }
 })
