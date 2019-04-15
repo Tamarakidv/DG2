@@ -24,6 +24,7 @@
       </v-flex>
     </v-layout>
     <dialogComp :hangingmanWord="hangingmanWord"/>
+    <textField/>
   </v-layout>
 </template>
 
@@ -33,13 +34,15 @@ import inputfield from '../components/sub/SubInputField.vue'
 import lettercomponent from '../components/sub/SubLetterComponent.vue'
 import guessedLetterComponent from '../components/sub/SubGuessedLetterComponent.vue'
 import dialogComp from '../components/base/BaseDialogComponent.vue'
+import textField from '../components/base/BaseTextField.vue'
 
 export default {
   components: {
     inputfield,
     lettercomponent,
     guessedLetterComponent,
-    dialogComp
+    dialogComp,
+    textField
   },
   data () {
     return {
