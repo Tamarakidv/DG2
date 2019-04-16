@@ -3,6 +3,7 @@
     <v-flex xs3>
       <v-text-field
         v-model="word"
+        @keyup.13="enterKey"
       ></v-text-field>
     </v-flex>
     <v-btn color="primary" @click="enter">Enter</v-btn>
@@ -20,6 +21,9 @@ export default {
     }
   },
   methods: {
+    enterKey () {
+      this.enter()
+    },
     enter () {
       let theWord = this.hangingmanWord.toLowerCase()
       if (theWord == this.word) {
@@ -27,7 +31,8 @@ export default {
         this.$store.state.win = true
       } else {
         // false
-        this.$store.state.guesWord = false
+        this.$store.state.failLetter++
+        this.$store.state.guesWord = true
       }
     }
   }

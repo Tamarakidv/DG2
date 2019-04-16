@@ -60,7 +60,6 @@ export default {
       }
     },
     enter () {
-      console.log(this.$store.state.letter);
       let counter = 0
       for (var i = 0; i < this.$store.state.letter.length; i++) {
         if (this.$store.state.letter[i].letter == this.givenLetter || this.$store.state.letter[i].letter == this.givenLetter.toUpperCase()) {

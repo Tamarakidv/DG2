@@ -69,6 +69,18 @@ export default {
     guesTheWord () {
       this.guesWord = false
     }
+  },
+  watch: {
+    checkGuesWord (data) {
+      this.$store.state.guesWord = false
+      this.guesWord = true
+      console.log(this.guesWord);
+    }
+  },
+  computed: {
+    checkGuesWord () {
+      return this.$store.state.guesWord
+    }
   }
 }
 </script>
