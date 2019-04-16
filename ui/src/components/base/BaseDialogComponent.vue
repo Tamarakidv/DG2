@@ -7,7 +7,7 @@
     <v-card v-if="wonOrNot === 'fail'">
       <v-layout row wrap justify-center>
         <v-card-title primary-title class="headline">
-          Je heb verloren
+          Je hebt verloren
         </v-card-title>
       </v-layout>
       <v-layout row wrap justify-center>
@@ -15,7 +15,7 @@
       </v-layout>
       <v-layout row wrap justify-center>
         <v-card-text>
-          het goede woord had moeten zijn: {{ hangingmanWord }}
+          Het goede woord had moeten zijn: {{ hangingmanWord }}
         </v-card-text>
       </v-layout>
       <v-card-actions>
@@ -37,7 +37,7 @@
 
       <v-card-actions>
         <v-layout row wrap justify-center>
-          <v-btn color="primary" @click="restart">restart</v-btn>
+          <v-btn color="primary" @click="restart">Restart</v-btn>
         </v-layout>
       </v-card-actions>
     </v-card>
