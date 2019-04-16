@@ -15,7 +15,7 @@
       </v-layout>
       <v-layout row wrap justify-center>
         <v-card-text>
-          het goede woord hat moeten zijn: {{ hangingmanWord }}
+          het goede woord had moeten zijn: {{ hangingmanWord }}
         </v-card-text>
       </v-layout>
       <v-card-actions>
