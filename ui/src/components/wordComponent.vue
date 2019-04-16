@@ -16,12 +16,11 @@
           :hangingmanWord="hangingmanWord"
         ></lettercomponent>
       </v-flex>
-      <v-flex xs6>
         <inputfield
         class="gameInput"
           :hangingmanWord="hangingmanWord"
         ></inputfield>
-      </v-flex>
+        <v-btn color="primary" @click="guesTheWord">Raad woord</v-btn>
     </v-layout>
     <v-layout v-if="!guesWord" class="gameControls">
       <v-flex offset-xs2>
@@ -58,13 +57,18 @@ export default {
         'Galg4.png',
         'Galg5.png'
       ],
-      guesWord: false
+      guesWord: true
     }
   },
   props: {
     hangingmanWord: String,
     image: String,
     guessedText: String
+  },
+  methods: {
+    guesTheWord () {
+      this.guesWord = false
+    }
   }
 }
 </script>
