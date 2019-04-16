@@ -56,7 +56,20 @@ export default {
   methods: {
     enterKey () {
       if (this.givenLetter != '') {
-        this.enter()
+        let counter = 0
+        for (let i = 0; i < this.$store.state.storeGivenLetter.length; i++) {
+          if (this.$store.state.storeGivenLetter[i].letter != this.givenLetter) {
+            if (counter == (this.$store.state.storeGivenLetter.length - 1)) {
+              if (!this.givenLetter || this.givenLetter.length <= 0 || this.givenLetter.length > 1) {
+
+              } else {
+                this.enter()
+              }
+            } else {
+              counter++
+            }
+          }
+        }
       }
     },
     enter () {
