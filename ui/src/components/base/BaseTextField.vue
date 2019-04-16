@@ -26,8 +26,6 @@ export default {
     },
     enter () {
       let theWord = this.hangingmanWord.toLowerCase()
-      let tempArray = []
-
       if (theWord == this.word.toLowerCase()) {
         // true
         this.$store.state.win = true

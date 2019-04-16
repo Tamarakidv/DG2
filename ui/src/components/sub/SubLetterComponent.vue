@@ -31,7 +31,6 @@ export default {
   },
   watch: {
     gottenWord (data) {
-      console.log(data);
       if (this.$store.state.storeGivenLetter.length <= 1) {
         this.letters = []
         for (let i = 0; i < data.length; i++) {
